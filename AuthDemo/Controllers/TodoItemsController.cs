@@ -2,29 +2,36 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AuthDemo.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace AuthDemo.Controllers
 {
-    [ApiExplorerSettings(IgnoreApi = true)]
+
+    //[ApiExplorerSettings(IgnoreApi = true)]
     [Route("[controller]")]
     [ApiController]
     public class TodoItemsController : ControllerBase
     {
         private readonly TodoContext _context;
+        private readonly ITodoItemService _todoItemService;
 
-        public TodoItemsController(TodoContext context)
+        public TodoItemsController(TodoContext context, ITodoItemService todoItemService)
         {
             _context = context;
+            _todoItemService = todoItemService;
         }
 
         // GET: api/TodoItems
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItem()
         {
-            return await _context.TodoItem.ToListAsync();
+            var result = await _todoItemService.GetTodoItems();
+
+            return Ok(result);
+            // return await _context.TodoItem.ToListAsync();
         }
 
         // GET: api/TodoItems/5

@@ -4,3 +4,8 @@ GET {{AuthDemo_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+GET {{AuthDemo_HostAddress}}/TodoItems
+Accept: application/json
+
+###

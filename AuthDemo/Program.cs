@@ -4,13 +4,19 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using AuthDemo.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<TodoContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("TodoContext") ?? throw new InvalidOperationException("Connection string 'TodoContext' not found.")));
 
 // Add services to the container.
+builder.Services.Configure<TodoItemOptions>(
+    builder.Configuration.GetSection(TodoItemOptions.Options));
+
 builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
+builder.Services.AddTodoService()
+                .AddPostService();
 
 // Adding Authentication
 builder.Services.AddAuthentication(options =>

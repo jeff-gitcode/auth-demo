@@ -1,6 +1,7 @@
 public class TodoItem
 {
+    public long UserId { get; set; }
     public long Id { get; set; }
-    public string? Name { get; set; }
-    public bool IsComplete { get; set; }
+    public string? Title { get; set; }
+    public bool Completed { get; set; }
 }

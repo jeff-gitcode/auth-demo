@@ -4,7 +4,9 @@
 - [x] code generator
 - [x] jwt token
 - [x] hot reloads- dotnet watch
-
+- [x] httpclientfactory/typedclient
+- [x] polly
+- 
 ![Alt text](./doc/jwt-demo.gif)
 
 ```dotnetcli
