@@ -21,6 +21,7 @@ public static class DependencyInjection
             httpClient.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
 
             httpClient.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
+            //httpClient.DefaultRequestHeaders.Add(HeaderNames.ContentType, "application/json");
             httpClient.Timeout = TimeSpan.FromMinutes(1);
         });
 

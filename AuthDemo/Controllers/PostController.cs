@@ -18,7 +18,7 @@ namespace AuthDemo.Controllers
 
         // GET: api/TodoItems
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItem()
+        public async Task<ActionResult<IEnumerable<Posts>>> GetTodoItem()
         {
             var result = await _service.GetPosts();
 
