@@ -34,4 +34,18 @@ $ dotnet aspnet-codegenerator controller -name TodoItemsController -async -api -
 # code watch
 $ dotnet watch
 
+
+# cd ../AuthDemo
+$ dotnet new xunit -o UnitTests
+$ dotnet sln add .\UnitTests\UnitTests.csproj
+
+# mockhttp
+$ dotnet add .\UnitTests\ package RichardSzalay.MockHttp
+$ dotnet add .\UnitTests\ package Moq
+
+# build test object
+$ dotnet add .\UnitTests\ package Bogus
+
+# fluent assertion
+$ dotnet add .\UnitTests\ package FluentAssertions
 ```
