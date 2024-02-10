@@ -6,6 +6,7 @@
 - [x] hot reloads- dotnet watch
 - [x] httpclientfactory/typedclient
 - [x] polly
+- [x] bogus
 - 
 ![Alt text](./doc/jwt-demo.gif)
 
