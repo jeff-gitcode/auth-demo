@@ -8,6 +8,7 @@
 - [x] polly
 - [x] bogus
 - [x] husky.net
+- [x] dotnet format
 - 
 ![Alt text](./doc/jwt-demo.gif)
 
@@ -36,7 +37,6 @@ $ dotnet aspnet-codegenerator controller -name TodoItemsController -async -api -
 # code watch
 $ dotnet watch
 
-
 # cd ../AuthDemo
 $ dotnet new xunit -o UnitTests
 $ dotnet sln add .\UnitTests\UnitTests.csproj
@@ -61,4 +61,7 @@ $ dotnet husky add pre-commit -c "echo 'Hello world!'"
 $ git add .husky/pre-commit
 
 $ git commit -m "message"
+
+# dotnet-format
+$ dotnet tool install dotnet-format
 ```
