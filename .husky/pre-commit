@@ -1,6 +1,15 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+echo 'Building code'
+dotnet build
+
+echo 'Formatting code'
+dotnet format
+
+echo 'Running tests'
+dotnet test
+
 ## husky task runner examples -------------------
 ## Note : for local installation use 'dotnet' prefix. e.g. 'dotnet husky'
 
@@ -19,4 +28,4 @@
 ## or put your custom commands -------------------
 #echo 'Husky.Net is awesome!'
 
-echo 'Hello world!'
+echo 'Hello Jeff I am Husky!'

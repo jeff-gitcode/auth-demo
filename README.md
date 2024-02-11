@@ -7,6 +7,7 @@
 - [x] httpclientfactory/typedclient
 - [x] polly
 - [x] bogus
+- [x] husky.net
 - 
 ![Alt text](./doc/jwt-demo.gif)
 
@@ -49,4 +50,15 @@ $ dotnet add .\UnitTests\ package Bogus
 
 # fluent assertion
 $ dotnet add .\UnitTests\ package FluentAssertions
+
+# husky.net  - cd root folder
+$ dotnet new tool-manifest
+$ dotnet tool install Husky
+$ dotnet husky install
+
+# pre-commit
+$ dotnet husky add pre-commit -c "echo 'Hello world!'"
+$ git add .husky/pre-commit
+
+$ git commit -m "message"
 ```

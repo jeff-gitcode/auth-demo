@@ -4,12 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-    public class TodoContext : DbContext
+public class TodoContext : DbContext
+{
+    public TodoContext(DbContextOptions<TodoContext> options)
+        : base(options)
     {
-        public TodoContext (DbContextOptions<TodoContext> options)
-            : base(options)
-        {
-        }
-
-        public DbSet<TodoItem> TodoItem { get; set; } = default!;
     }
+
+    public DbSet<TodoItem> TodoItem { get; set; } = default!;
+}
